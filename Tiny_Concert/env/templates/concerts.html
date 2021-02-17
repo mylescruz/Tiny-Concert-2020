@@ -1,0 +1,76 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+
+{% block title %}Tiny Concert Series: Concert List{% endblock %}
+
+{% block page_content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for msg in messages %}
+      <p style = "color: blue">{{ msg }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="page-header">
+    <h1>Upcoming Concerts and Dates</h1>
+    <h4>Choose a concert to attend</h4>
+    <br>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href = "concertselected?date={{ D[1] }}"><img src = "static/pixies.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[2] }}"><img src = "static/TLC.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[3] }}"><img src = "static/mgmt.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+        </tr>
+        <tr>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[1] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[2] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[3] }}</td>
+        </tr>
+        <tr>
+          <td style="font-size: 16px;text-align: center;">{{ Date[1] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[2] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[3] }}</td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td><a href = "concertselected?date={{ D[4] }}"><img src = "static/u2.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[5] }}"><img src = "static/amine.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[6] }}"><img src = "static/theweeknd.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+        </tr>
+        <tr>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[4] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[5] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[6] }}</td>
+        </tr>
+        <tr>
+          <td style="font-size: 16px;text-align: center;">{{ Date[4] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[5] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[6] }}</td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td><a href = "concertselected?date={{ D[7] }}"><img src = "static/usher.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[8] }}"><img src = "static/lukecombs.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+          <td><a href = "concertselected?date={{ D[9] }}"><img src = "static/fleetwoodmac.jpg" width = "300" height = "200" style = "border-radius: 25px;margin-left:50px;margin-right:50px;"></a></td>
+        </tr>
+        <tr>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[7] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[8] }}</td>
+          <td style="font-size: 20px;font-weight: bold;text-align: center;">{{ M[9] }}</td>
+        </tr>
+        <tr>
+          <td style="font-size: 16px;text-align: center;">{{ Date[7] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[8] }}</td>
+          <td style="font-size: 16px;text-align: center;">{{ Date[9] }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+{% endblock %}

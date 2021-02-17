@@ -1,0 +1,71 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+
+{% block title %} Seats for {{ date }} {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1><center>{{ musician }} on {{ date }}</center></h3> <br>
+  <center><img src = "{{ available }}" width = "20" height = "20"> Available <img src = "{{ reserved }}" width = "20" height = "20"> Reserved </center>
+  <br>
+    <form action="/action_page.php">
+      <table style="margin-left:auto; margin-right:auto;">
+        <thead>
+          <tr>
+            <th> </th>
+            <th>&emsp; &emsp;Seat 1</th>
+            <th>&emsp; &emsp;Seat 2</th>
+            <th>&emsp; &emsp;Seat 3</th>
+            <th>&emsp; &emsp;Seat 4</th>
+          </tr>
+        </thead>
+        <br>
+        <tbody>
+          <tr>
+            <td><strong>Row A &emsp; &emsp;</strong></td>
+            <td>A1<a href="seatselect?row=A&seat=0"><img src="{{A[0]}}" /></a></td>
+            <td>A2<a href="seatselect?row=A&seat=1"><img src="{{A[1]}}" /></a></td>
+            <td>A3<a href="seatselect?row=A&seat=2"><img src="{{A[2]}}" /></a></td>
+            <td>A4<a href="seatselect?row=A&seat=3"><img src="{{A[3]}}" /></a></td>
+          </tr>
+          <tr>
+            <td><strong>Row B &emsp; &emsp;</strong></td>
+            <td>B1<a href="seatselect?row=B&seat=0"><img src="{{B[0]}}" /></a></td>
+            <td>B2<a href="seatselect?row=B&seat=1"><img src="{{B[1]}}" /></a></td>
+            <td>B3<a href="seatselect?row=B&seat=2"><img src="{{B[2]}}" /></a></td>
+            <td>B4<a href="seatselect?row=B&seat=3"><img src="{{B[3]}}" /></a></td>
+          </tr>
+          <tr>
+            <td><strong>Row C &emsp; &emsp;</strong></td>
+            <td>C1<a href="seatselect?row=C&seat=0"><img src="{{C[0]}}" /></a></td>
+            <td>C2<a href="seatselect?row=C&seat=1"><img src="{{C[1]}}" /></a></td>
+            <td>C3<a href="seatselect?row=C&seat=2"><img src="{{C[2]}}" /></a></td>
+            <td>C4<a href="seatselect?row=C&seat=3"><img src="{{C[3]}}" /></a></td>
+          </tr>
+          <tr>
+            <td><strong>Row D &emsp; &emsp;</strong></td>
+            <td>D1<a href="seatselect?row=D&seat=0"><img src="{{D[0]}}" /></a></td>
+            <td>D2<a href="seatselect?row=D&seat=1"><img src="{{D[1]}}" /></a></td>
+            <td>D3<a href="seatselect?row=D&seat=2"><img src="{{D[2]}}" /></a></td>
+            <td>D4<a href="seatselect?row=D&seat=3"><img src="{{D[3]}}" /></a></td>
+          </tr>
+          <tr>
+            <td><strong>Row E &emsp; &emsp;</strong></td>
+            <td>E1<a href="seatselect?row=E&seat=0"><img src="{{E[0]}}" /></a></td>
+            <td>E2<a href="seatselect?row=E&seat=1"><img src="{{E[1]}}" /></a></td>
+            <td>E3<a href="seatselect?row=E&seat=2"><img src="{{E[2]}}" /></a></td>
+            <td>E4<a href="seatselect?row=E&seat=3"><img src="{{E[3]}}" /></a></td>
+          </tr>
+        </tbody>
+      </table>
+        <br>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for msg in messages %}
+              <center><p style="color:red;">{{ msg }}</p></center>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <center>Your assigned seat(s): {% if seat %} {{seat}} {% else %} No Current Seat {% endif %}</center>
+</div>
+
+{% endblock %}

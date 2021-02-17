@@ -1,0 +1,9 @@
+January_02_2021,Pixies,foo
+February_14_2021,TLC,foo
+March_03_2021,MGMT,foo
+April_10_2021,U2,foo
+May_05_2021,Amine,foo
+June_12_2021,The Weeknd,foo
+July_25_2021,Usher,foo
+August_02_2021,Luke Combs,foo
+September_17_2021,Fleetwood Mac,foo
